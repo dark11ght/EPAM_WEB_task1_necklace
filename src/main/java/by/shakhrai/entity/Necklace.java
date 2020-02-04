@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Necklace {
     private int amountJewel;
-    private List<Jewel> jewels = new ArrayList<>();
+    private List<JewelAbstract> jewelAbstracts = new ArrayList<>();
 
     public Necklace() {
     }

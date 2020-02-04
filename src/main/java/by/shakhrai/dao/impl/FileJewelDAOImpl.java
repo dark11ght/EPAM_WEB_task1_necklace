@@ -1,7 +1,7 @@
 package by.shakhrai.dao.impl;
 
 import by.shakhrai.dao.JewelDAO;
-import by.shakhrai.entity.Jewel;
+import by.shakhrai.entity.JewelAbstract;
 import by.shakhrai.exceptoin.DAOException;
 
 import java.io.File;
@@ -24,30 +24,29 @@ public class FileJewelDAOImpl implements JewelDAO {
     }
 
 
-
     @Override
-    public void addJewel(Jewel jewel) throws DAOException {
+    public void addJewel(JewelAbstract jewelAbstract) throws DAOException {
 
     }
 
     @Override
-    public List<Jewel> getAllJewel() throws DAOException {
+    public List<JewelAbstract> getAllJewel() throws DAOException {
         return null;
     }
 
     @Override
-    public Jewel getJewel(String jewel) throws DAOException {
+    public JewelAbstract getJewelByName(String jewel) throws DAOException {
         return null;
     }
 
     @Override
-    public boolean isJewel(String jewel) throws DAOException {
+    public boolean getJewelByLimpidity(String jewel) throws DAOException {
         return false;
     }
 
     @Override
-    public boolean isJewel(int minLimpidity, int maxLimpidity) throws DAOException {
-        return false;
+    public JewelAbstract getJewelByLimpidity(int minLimpidity, int maxLimpidity) throws DAOException {
+        return null;
     }
 
     @Override
