@@ -1,16 +1,21 @@
 package by.shakhrai.dao.impl;
 
 import by.shakhrai.dao.JewelDAO;
-import by.shakhrai.entity.JewelAbstract;
 import by.shakhrai.exceptoin.DAOException;
+import by.shakhrai.exceptoin.InputFileReaderException;
+import by.shakhrai.input.InputFileReader;
+import org.apache.log4j.Logger;
 
 import java.io.File;
-import java.util.List;
+import java.util.ArrayList;
+
 
 public class FileJewelDAOImpl implements JewelDAO {
-
+    private final static InputFileReader FILE_INPUT = InputFileReader.INSTANCE;
     private File jewelFile;
     private String daoSeparator;
+
+    final static Logger logger = Logger.getLogger(FileJewelDAOImpl.class);
 
 
     public FileJewelDAOImpl(File jewelFile, String daoSeparator) {
@@ -23,34 +28,22 @@ public class FileJewelDAOImpl implements JewelDAO {
         this.daoSeparator = dataSeparator;
     }
 
-
     @Override
-    public void addJewel(JewelAbstract jewelAbstract) throws DAOException {
+    public ArrayList<String> getAllJewel() throws DAOException {
+        ArrayList<String> arrayList;
+        try {
+            arrayList = FILE_INPUT.readFile(jewelFile);
+        } catch (InputFileReaderException e) {
+            logger.debug("Fail access to the data source ");
+            throw new DAOException("Fail access to the data source ");
+        }
+        if (arrayList == null) {
+            logger.debug("Records not found");
+            throw new DAOException("Records not found");
+        }
 
+        return arrayList;
     }
 
-    @Override
-    public List<JewelAbstract> getAllJewel() throws DAOException {
-        return null;
-    }
 
-    @Override
-    public JewelAbstract getJewelByName(String jewel) throws DAOException {
-        return null;
-    }
-
-    @Override
-    public boolean getJewelByLimpidity(String jewel) throws DAOException {
-        return false;
-    }
-
-    @Override
-    public JewelAbstract getJewelByLimpidity(int minLimpidity, int maxLimpidity) throws DAOException {
-        return null;
-    }
-
-    @Override
-    public void deleteJewel(int Jewel) throws DAOException {
-
-    }
 }
