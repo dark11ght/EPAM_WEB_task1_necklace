@@ -1,6 +1,6 @@
 package by.shakhrai.service.impl;
 
-import by.shakhrai.entity.JewelAbstract;
+import by.shakhrai.entity.impl.JewelAbstract;
 import by.shakhrai.exceptoin.ServiceException;
 import by.shakhrai.factory.DAOFactory;
 import by.shakhrai.factory.ServiceFactory;

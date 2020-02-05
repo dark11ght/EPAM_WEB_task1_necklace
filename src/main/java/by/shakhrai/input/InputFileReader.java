@@ -20,9 +20,9 @@ public enum InputFileReader {
         BufferedReader bufferedReader = null;
         try {
             bufferedReader = new BufferedReader(new java.io.FileReader(file));
-            String temp;
-            while ((temp = bufferedReader.readLine()) != null) {
-                fileRows.add(temp);
+            String line;
+            while ((line = bufferedReader.readLine()) != null) {
+                fileRows.add(line);
             }
         } catch (IOException e) {
             throw new InputFileReaderException("File is not found", e);
