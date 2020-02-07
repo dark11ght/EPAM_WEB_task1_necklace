@@ -1,20 +1,17 @@
 package by.shakhrai.entity.impl;
 
-import by.shakhrai.entity.Jewel;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-public class Pearl extends JewelAbstract implements Serializable, Jewel {
+public class Pearl extends JewelAbstract implements Serializable {
     private String color;
 
-
-    public Pearl(double weight, double cost, int limpidity) {
-        super(weight, cost, limpidity);
+    public Pearl(String type, double weight, double cost, int limpidity) {
+        super(type, weight, cost, limpidity);
     }
 
-    public Pearl(double weight, double cost, int limpidity, String color) {
-        super(weight, cost, limpidity);
+    public Pearl(String type, double weight, double cost, int limpidity, String color) {
+        super(type, weight, cost, limpidity);
         this.color = color;
     }
 

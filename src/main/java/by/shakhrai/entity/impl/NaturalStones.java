@@ -1,21 +1,17 @@
 package by.shakhrai.entity.impl;
 
-import by.shakhrai.entity.Jewel;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-public class NaturalStones extends JewelAbstract implements Serializable, Jewel {
+public class NaturalStones extends JewelAbstract implements Serializable {
     private String naturalStonesName;
 
-
-    public NaturalStones(double weight, double cost, int limpidity) {
-        super(weight, cost, limpidity);
+    public NaturalStones(String type, double weight, double cost, int limpidity) {
+        super(type, weight, cost, limpidity);
     }
 
-
-    public NaturalStones(double weight, double cost, int limpidity, String naturalStonesName) {
-        super(weight, cost, limpidity);
+    public NaturalStones(String type, double weight, double cost, int limpidity, String naturalStonesName) {
+        super(type, weight, cost, limpidity);
         this.naturalStonesName = naturalStonesName;
     }
 

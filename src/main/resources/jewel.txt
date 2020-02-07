@@ -1,6 +1,6 @@
-artificialStones 5.0 17.2 0 stoneName1
-artificialStones 1.7 11.9 0 stoneName2
+artificial_stones 5.0 17.2 0 stoneName1
+artificial_stones 1.7 11.9 0 stoneName2
 amber 3.0 110.1 70 yellow
-naturalStones 3.0 69.5 50 malachite
-naturalStones 1.3 107.2 30 moonstone
+natural_stones 3.0 69.5 50 malachite
+natural_stones 1.3 107.2 30 moonstone
 pearl 10.0 256.2 0 white

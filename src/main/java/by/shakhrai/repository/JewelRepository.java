@@ -1,15 +1,15 @@
 package by.shakhrai.repository;
 
-import by.shakhrai.entity.Jewel;
-import by.shakhrai.entity.Necklace;
+import by.shakhrai.repository.specification.JewelSpecification;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface JewelRepository {
 
-    ArrayList<Jewel> getNecklaseJewel();
-    void addJewel (Jewel jewel);
-    void removeJewel (Jewel jewel);
+    List<JewelAbstract> query(JewelSpecification specification);
+    void addNecklaceJewel(List<JewelAbstract> jewel);
+    void addJewel (JewelAbstract jewel);
+    void removeJewel (JewelAbstract jewel);
 
 
 }

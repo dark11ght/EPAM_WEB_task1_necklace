@@ -1,13 +1,13 @@
 package by.shakhrai.factory;
 
 import by.shakhrai.dao.DAOProperty;
+import by.shakhrai.dao.JewelDAO;
 import by.shakhrai.dao.impl.FileJewelDAOImpl;
 
 public final class DAOFactory {
     private static final DAOFactory instance = new DAOFactory();
 
-    private final String daoSeparator = DAOProperty.getStringValue("daoSeparator");
-    private final JewelDAO jewelFilePath = new FileJewelDAOImpl(DAOProperty.getStringValue("jewelFilePath"), daoSeparator);
+    private final JewelDAO jewelFilePath = new FileJewelDAOImpl(DAOProperty.getStringValue("jewelFilePath"));
 
     private DAOFactory() {
 

@@ -3,15 +3,24 @@ package by.shakhrai.entity.impl;
 import java.util.Objects;
 
 public abstract class JewelAbstract {
-    private double weight;
-    private double cost;
-    private int limpidity;
+    protected String type;
+    protected double weight;
+    protected double cost;
+    protected int limpidity;
 
-
-    public JewelAbstract(double weight, double cost, int limpidity) {
+    public JewelAbstract(String type, double weight, double cost, int limpidity) {
+        this.type = type;
         this.weight = weight;
         this.cost = cost;
         this.limpidity = limpidity;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public double getWeight() {
@@ -38,7 +47,6 @@ public abstract class JewelAbstract {
         this.limpidity = limpidity;
     }
 
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -46,18 +54,20 @@ public abstract class JewelAbstract {
         JewelAbstract that = (JewelAbstract) o;
         return Double.compare(that.weight, weight) == 0 &&
                 Double.compare(that.cost, cost) == 0 &&
-                limpidity == that.limpidity;
+                limpidity == that.limpidity &&
+                Objects.equals(type, that.type);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(weight, cost, limpidity);
+        return Objects.hash(type, weight, cost, limpidity);
     }
 
     @Override
     public String toString() {
         return "JewelAbstract{" +
-                "weight=" + weight +
+                "type='" + type + '\'' +
+                ", weight=" + weight +
                 ", cost=" + cost +
                 ", limpidity=" + limpidity +
                 '}';

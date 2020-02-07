@@ -1,19 +1,17 @@
 package by.shakhrai.entity.impl;
 
-import by.shakhrai.entity.Jewel;
-
 import java.io.Serializable;
 import java.util.Objects;
 
-public class ArtificialStones extends JewelAbstract implements Serializable, Jewel {
+public class ArtificialStones extends JewelAbstract implements Serializable {
     private String artificialStonesName;
 
-    public ArtificialStones(double weight, double cost, int limpidity) {
-        super(weight, cost, limpidity);
+    public ArtificialStones(String type, double weight, double cost, int limpidity) {
+        super(type, weight, cost, limpidity);
     }
 
-    public ArtificialStones(double weight, double cost, int limpidity, String artificialStonesName) {
-        super(weight, cost, limpidity);
+    public ArtificialStones(String type, double weight, double cost, int limpidity, String artificialStonesName) {
+        super(type, weight, cost, limpidity);
         this.artificialStonesName = artificialStonesName;
     }
 
